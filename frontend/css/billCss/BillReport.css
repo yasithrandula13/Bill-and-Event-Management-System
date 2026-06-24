@@ -1,0 +1,477 @@
+
+.report-body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+
+}
+/* Navbar Styles */
+.navbar-bill-report {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo-bill-report {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon-bill-report {
+  color: #667eea;
+}
+
+.nav-links-bill-report {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link-bill-report {
+  text-decoration: none;
+  color: #4a5568;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.nav-link-bill-report:hover {
+  color: #667eea;
+  background: #f7fafc;
+}
+
+/* Container */
+.container-bill-report {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.header-section-bill-report {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.title-wrapper-bill-report {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.icon-wrapper-bill-report {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper-bill-report svg {
+  color: white;
+}
+
+.page-title-bill-report {
+  font-size: 2.5rem;
+  color: #2d3748;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle-bill-report {
+  color: #718096;
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+/* Card Styles */
+.card-bill-report {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-bill-report:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-title-bill-report {
+  font-size: 1.3rem;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.card-title-bill-report svg {
+  color: #667eea;
+}
+
+/* Filters Grid */
+.filters-grid-bill-report {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-group-bill-report {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-label-bill-report {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.select-wrapper-bill-report {
+  position: relative;
+}
+
+.filter-select-bill-report,
+.filter-input-bill-report {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #2d3748;
+  background: #f7fafc;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-select-bill-report:focus,
+.filter-input-bill-report:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-select-bill-report:hover,
+.filter-input-bill-report:hover {
+  border-color: #cbd5e0;
+}
+
+/* Action Buttons */
+.actions-bill-report {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.btn-bill-report {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.generate-btn-bill-report {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.generate-btn-bill-report:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.generate-btn-bill-report:active {
+  transform: translateY(0);
+}
+
+.download-btn-bill-report {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+}
+
+.download-btn-bill-report:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+.download-btn-bill-report:active {
+  transform: translateY(0);
+}
+
+/* Report Output */
+.output-card-bill-report {
+  min-height: 300px;
+}
+
+.report-output-bill-report {
+  background: #f7fafc;
+  padding: 2rem;
+  border-radius: 12px;
+  min-height: 250px;
+}
+
+/* Empty State */
+.empty-state-bill-report {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.empty-state-bill-report svg {
+  color: #cbd5e0;
+  margin-bottom: 1.5rem;
+}
+
+.empty-state-bill-report h3 {
+  color: #4a5568;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state-bill-report p {
+  color: #718096;
+  font-size: 1rem;
+}
+
+/* Report Template */
+.report-template-bill-report {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.report-header-bill-report {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid #667eea;
+  margin-bottom: 2rem;
+}
+
+.report-title-bill-report {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.report-date-bill-report {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.report-filters-bill-report {
+  background: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.report-filters-bill-report h4 {
+  color: #4a5568;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.filter-info-bill-report {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.filter-item-bill-report {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-item-bill-report strong {
+  color: #667eea;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.filter-item-bill-report span {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+/* Report Table */
+.report-table-bill-report {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.report-table-bill-report thead {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.report-table-bill-report th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.report-table-bill-report tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+  transition: background 0.2s ease;
+}
+
+.report-table-bill-report tbody tr:hover {
+  background: #f7fafc;
+}
+
+.report-table-bill-report tbody tr:last-child {
+  border-bottom: none;
+}
+
+.report-table-bill-report td {
+  padding: 14px 16px;
+  color: #2d3748;
+}
+
+.status-badge-bill-report {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-paid-bill-report {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.status-unpaid-bill-report {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.no-data-bill-report {
+  text-align: center;
+  padding: 2rem;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Report Summary */
+.report-summary-bill-report {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.report-summary-bill-report h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.total-amount-bill-report {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-bill-report {
+    padding: 1rem;
+  }
+
+  .nav-logo-bill-report {
+    font-size: 1.2rem;
+  }
+
+  .container-bill-report {
+    margin: 20px auto;
+  }
+
+  .page-title-bill-report {
+    font-size: 2rem;
+  }
+
+  .filters-grid-bill-report {
+    grid-template-columns: 1fr;
+  }
+
+  .actions-bill-report {
+    flex-direction: column;
+  }
+
+  .btn-bill-report {
+    width: 100%;
+  }
+
+  .report-table-bill-report {
+    font-size: 0.9rem;
+  }
+
+  .report-table-bill-report th,
+  .report-table-bill-report td {
+    padding: 10px;
+  }
+}

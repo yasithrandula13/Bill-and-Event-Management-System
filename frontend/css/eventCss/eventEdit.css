@@ -1,0 +1,262 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Event Edit Styles */
+
+.container-ev-edit {
+    font-family: 'Poppins', sans-serif;
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+}
+
+.header-ev-edit {
+    margin-bottom: 2rem;
+}
+
+.btn-back-ev-edit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-back-ev-edit:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-4px);
+}
+
+.arrow-ev-edit {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.page-title-ev-edit {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-ev-edit {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.form-group-ev-edit {
+    margin-bottom: 1.5rem;
+}
+
+.form-row-ev-edit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.label-ev-edit {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.input-ev-edit,
+.textarea-ev-edit {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2d3748;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-ev-edit:focus,
+.textarea-ev-edit:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.textarea-ev-edit {
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+}
+
+.reminder-section-ev-edit {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    border-radius: 12px;
+}
+
+.legend-ev-edit {
+    padding: 0.5rem 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    color: #f5576c;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-label-ev-edit {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label-ev-edit:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateX(4px);
+}
+
+.checkbox-ev-edit {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #f5576c;
+}
+
+.checkbox-text-ev-edit {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1rem;
+}
+
+.reminder-section-ev-edit .form-group-ev-edit {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.reminder-section-ev-edit .label-ev-edit {
+    color: #2d3748;
+}
+
+.btn-submit-ev-edit {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit-ev-edit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.btn-submit-ev-edit:active {
+    transform: translateY(0);
+}
+
+.message-box-ev-edit {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 10px;
+    animation: fadeIn-ev-edit 0.3s ease;
+}
+
+.message-box-ev-edit.success-ev-edit {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(56, 239, 125, 0.3);
+}
+
+.message-box-ev-edit.error-ev-edit {
+    background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(235, 51, 73, 0.3);
+}
+
+@keyframes fadeIn-ev-edit {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-ev-edit {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .form-ev-edit {
+        padding: 1.5rem;
+    }
+
+    .form-row-ev-edit {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title-ev-edit {
+        font-size: 1.6rem;
+    }
+
+    .btn-back-ev-edit {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-ev-edit {
+        padding: 1rem;
+    }
+
+    .form-ev-edit {
+        padding: 1rem;
+    }
+
+    .reminder-section-ev-edit {
+        padding: 1rem;
+    }
+
+    .page-title-ev-edit {
+        font-size: 1.4rem;
+    }
+}

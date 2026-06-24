@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dashboard</title>
+    <link rel="stylesheet" href="../../css/dashboardCss/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="main-dash-body">
+    <div class="container-dash">
+        <!-- Header -->
+        <header class="header-dash">
+            <div class="welcome-section-dash">
+                <h1 class="title-dash">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Manage Your Events And Bills
+                </h1>
+                <p class="subtitle-dash">Welcome back! Here's what's happening today</p>
+            </div>
+            <div class="header-actions-dash">
+                <div class="notification-bell-dash" id="notificationBell">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count-dash" id="notificationCount">0</span>
+                </div>
+                <div class="user-profile-dash">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary Cards -->
+        <section class="summary-section-dash">
+            <div class="summary-card-dash total-bills-dash">
+                <div class="summary-icon-dash">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <div class="summary-content-dash">
+                    <h3 class="summary-number-dash" id="totalBills">0</h3>
+                    <p class="summary-label-dash">Total Bills</p>
+                </div>
+            </div>
+            <div class="summary-card-dash overdue-bills-dash">
+                <div class="summary-icon-dash">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="summary-content-dash">
+                    <h3 class="summary-number-dash" id="overdueBills">0</h3>
+                    <p class="summary-label-dash">Overdue Bills</p>
+                </div>
+            </div>
+            <div class="summary-card-dash total-events-dash">
+                <div class="summary-icon-dash">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="summary-content-dash">
+                    <h3 class="summary-number-dash" id="totalEvents">0</h3>
+                    <p class="summary-label-dash">Total Events</p>
+                </div>
+            </div>
+            <div class="summary-card-dash monthly-spending-dash">
+                <div class="summary-icon-dash">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="summary-content-dash">
+                    <h3 class="summary-number-dash" id="monthlySpending">$0</h3>
+                    <p class="summary-label-dash">Monthly Spending</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="main-content-dash">
+            <!-- Left Column -->
+            <div class="left-column-dash">
+                <!-- Quick Actions -->
+                <section class="quick-actions-section-dash">
+                    <h2 class="section-title-dash">
+                        <i class="fas fa-bolt"></i>
+                        Quick Actions
+                    </h2>
+                    <div class="quick-actions-grid-dash">
+                        <button class="quick-action-btn-dash" onclick="openAddBill()">
+                            <i class="fas fa-plus"></i>
+                            Add Bill
+                        </button>
+                        <button class="quick-action-btn-dash" onclick="openAddEvent()">
+                            <i class="fas fa-calendar-plus"></i>
+                            Add Event
+                        </button>
+                        <button class="quick-action-btn-dash" onclick="openFeedback()">
+                            <i class="fas fa-comment"></i>
+                            Feedback
+                        </button>
+                        <button class="quick-action-btn-dash" onclick="exportData()">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Notifications -->
+                <section class="notifications-section-dash">
+                    <div class="section-header-dash">
+                        <h2 class="section-title-dash">
+                            <i class="fas fa-bell"></i>
+                            Notifications
+                        </h2>
+                        <div class="filter-buttons-dash">
+                            <button class="filter-btn-dash active-dash" data-filter="all">All</button>
+                            <button class="filter-btn-dash" data-filter="bills">Bills</button>
+                            <button class="filter-btn-dash" data-filter="events">Events</button>
+                        </div>
+                    </div>
+                    <div class="notifications-list-dash" id="notificationsList">
+                        <!-- Notifications will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Recent Bills -->
+                <section class="bills-section-dash">
+                    <div class="section-header-dash">
+                        <h2 class="section-title-dash">
+                            <i class="fas fa-file-invoice"></i>
+                            Recent Bills
+                        </h2>
+                        <button class="view-all-btn-dash" onclick="viewAllBills()">
+                            View All <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="bills-list-dash" id="billsList">
+                        <!-- Bills will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Recent Events -->
+                <section class="events-section-dash">
+                    <div class="section-header-dash">
+                        <h2 class="section-title-dash">
+                            <i class="fas fa-calendar"></i>
+                            Upcoming Events
+                        </h2>
+                        <button class="view-all-btn-dash" onclick="viewAllEvents()">
+                            View All <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="events-list-dash" id="eventsList">
+                        <!-- Events will be populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column-dash">
+                <!-- Mini Calendar -->
+                <section class="calendar-section-dash">
+                    <h2 class="section-title-dash">
+                        <i class="fas fa-calendar-alt"></i>
+                        Calendar
+                    </h2>
+                    <div class="calendar-container-dash">
+                        <div class="calendar-header-dash">
+                            <button class="calendar-nav-btn-dash" id="prevMonth">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <h3 class="calendar-month-dash" id="currentMonth">January 2025</h3>
+                            <button class="calendar-nav-btn-dash" id="nextMonth">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="calendar-weekdays-dash">
+                            <div class="weekday-dash">Sun</div>
+                            <div class="weekday-dash">Mon</div>
+                            <div class="weekday-dash">Tue</div>
+                            <div class="weekday-dash">Wed</div>
+                            <div class="weekday-dash">Thu</div>
+                            <div class="weekday-dash">Fri</div>
+                            <div class="weekday-dash">Sat</div>
+                        </div>
+                        <div class="calendar-days-dash" id="calendarDays">
+                            <!-- Calendar days will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Calendar Legend -->
+                    <div class="calendar-legend-dash">
+                        <div class="legend-item-dash">
+                            <span class="legend-dot-dash bill-dot-dash"></span>
+                            <span>Bills</span>
+                        </div>
+                        <div class="legend-item-dash">
+                            <span class="legend-dot-dash event-dot-dash"></span>
+                            <span>Events</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Stats -->
+                <section class="stats-section-dash">
+                    <h2 class="section-title-dash">
+                        <i class="fas fa-chart-pie"></i>
+                        Quick Stats
+                    </h2>
+                    <div class="stats-container-dash">
+                        <div class="stat-item-dash">
+                            <div class="stat-label-dash">This Week</div>
+                            <div class="stat-value-dash" id="thisWeekBills">0 bills</div>
+                        </div>
+                        <div class="stat-item-dash">
+                            <div class="stat-label-dash">Next Week</div>
+                            <div class="stat-value-dash" id="nextWeekEvents">0 events</div>
+                        </div>
+                        <div class="stat-item-dash">
+                            <div class="stat-label-dash">Completion</div>
+                            <div class="stat-value-dash">
+                                <div class="progress-bar-dash">
+                                    <div class="progress-fill-dash" id="completionProgress"></div>
+                                </div>
+                                <span id="completionText">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Tooltip -->
+        <div class="tooltip-dash" id="tooltip"></div>
+    </div>
+</div>
+<script src="../../js/dashboardJs/dashboard.js"></script>
+</body>
+</html>

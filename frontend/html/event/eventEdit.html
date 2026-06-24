@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event</title>
+    <link rel="stylesheet" href="../../css/eventCss/eventEdit.css">
+</head>
+<body>
+<div class="container-ev-edit">
+    <div class="header-ev-edit">
+        <a href="eventDashboard.html" class="btn-back-ev-edit">
+            <span class="arrow-ev-edit">←</span> Back to Dashboard
+        </a>
+        <h2 class="page-title-ev-edit">✏️ Edit Event</h2>
+    </div>
+
+    <form id="editEventForm" class="form-ev-edit">
+        <div class="form-group-ev-edit">
+            <label for="eventName" class="label-ev-edit">Event Name:</label>
+            <input type="text" id="eventName" class="input-ev-edit" required>
+        </div>
+
+        <div class="form-row-ev-edit">
+            <div class="form-group-ev-edit">
+                <label for="eventDate" class="label-ev-edit">Event Date:</label>
+                <input type="date" id="eventDate" class="input-ev-edit" required>
+            </div>
+
+            <div class="form-group-ev-edit">
+                <label for="eventTime" class="label-ev-edit">Event Time:</label>
+                <input type="time" id="eventTime" class="input-ev-edit" required>
+            </div>
+        </div>
+
+        <div class="form-group-ev-edit">
+            <label for="eventLocation" class="label-ev-edit">Location:</label>
+            <input type="text" id="eventLocation" class="input-ev-edit">
+        </div>
+
+        <div class="form-group-ev-edit">
+            <label for="eventDescription" class="label-ev-edit">Description:</label>
+            <textarea id="eventDescription" rows="4" class="textarea-ev-edit"></textarea>
+        </div>
+
+        <!-- Reminder Section -->
+        <fieldset class="reminder-section-ev-edit">
+            <legend class="legend-ev-edit">📧 Reminder Email</legend>
+
+            <label class="checkbox-label-ev-edit">
+                <input type="checkbox" id="enableReminder" class="checkbox-ev-edit" checked>
+                <span class="checkbox-text-ev-edit">Enable Reminder Email</span>
+            </label>
+
+            <div class="form-group-ev-edit">
+                <label for="reminderEmail" class="label-ev-edit">Recipient Email:</label>
+                <input type="email" id="reminderEmail" class="input-ev-edit" placeholder="example@email.com">
+            </div>
+
+            <div class="form-row-ev-edit">
+                <div class="form-group-ev-edit">
+                    <label for="reminderDay" class="label-ev-edit">Days Before:</label>
+                    <input type="number" id="reminderDay" min="0" value="0" class="input-ev-edit">
+                </div>
+
+                <div class="form-group-ev-edit">
+                    <label for="reminderTime" class="label-ev-edit">Reminder Time:</label>
+                    <input type="time" id="reminderTime" class="input-ev-edit">
+                </div>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn-submit-ev-edit">💾 Update Event</button>
+    </form>
+
+    <div id="messageBox" class="message-box-ev-edit" style="display: none;"></div>
+</div>
+
+<script src="../../js/eventJs/eventEdit.js"></script>
+</body>
+</html>

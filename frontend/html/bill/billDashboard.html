@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bill Management Dashboard</title>
+  <link rel="stylesheet" href="../../css/billCss/BillDashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+</head>
+<body style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #2b6bc5; min-height: 100vh; margin: 0; padding: 0; position: relative; overflow-x: hidden;">
+<!-- Animated Background -->
+<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: linear-gradient(45deg, #004dff, #000000, #0021fd, #000000); background-size: 400% 400%; animation: gradientShift 15s ease infinite;"></div>
+<!-- Navbar -->
+<!--<nav class="navbar-Bill">-->
+<!--  <div class="nav-logo-Bill">Bill & Event Reminder</div>-->
+<!--  <ul class="nav-links-Bill">-->
+<!--    <li><a href="billDashboard.html" class="active-Bill">Dashboard</a></li>-->
+<!--    <li><a href="billAdd.html">➕ Add Bill</a></li>-->
+<!--    <li><a href="#">📅 Events</a></li>-->
+<!--  </ul>-->
+<!--</nav>-->
+
+<!-- Main Container -->
+<div class="container-Bill">
+  <a href="../../html/dashboard/dashboard.html">
+  <button class="bill-dash-bck-home" role="button"> Back to Home</button>
+  </a>
+
+  <h2 class="page-title-Bill">📊 Bill Management Dashboard</h2>
+
+  <!-- Summary Section -->
+  <div class="summary-cards-Bill">
+    <div class="card-Bill total-Bill">
+      <div class="card-icon">📊</div>
+      <div class="card-content">
+        <h3>Total Bills</h3>
+        <span id="totalBills">0</span>
+      </div>
+    </div>
+    <div class="card-Bill paid-Bill">
+      <div class="card-icon">✅</div>
+      <div class="card-content">
+        <h3>Paid Bills</h3>
+        <span id="paidBills">0</span>
+      </div>
+    </div>
+    <div class="card-Bill unpaid-Bill">
+      <div class="card-icon">⏰</div>
+      <div class="card-content">
+        <h3>Unpaid Bills</h3>
+        <span id="unpaidBills">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reminder Cards Section -->
+  <div class="reminder-cards-section">
+    <div class="section-header">
+      <h3>🔔 Upcoming Bill Reminders</h3>
+      <div class="reminder-filter">
+        <label for="reminderDays">Show bills due in next:</label>
+        <select id="reminderDays">
+          <option value="3" selected>3 Days</option>
+          <option value="5">5 Days</option>
+          <option value="7">7 Days</option>
+          <option value="14">14 Days</option>
+        </select>
+      </div>
+    </div>
+    <div id="reminderCardsContainer" class="reminder-cards-container"></div>
+  </div>
+
+  <!-- Filters Section -->
+  <div class="filters-Bill">
+    <div class="filter-group">
+      <label for="dateFilter">📅 Upcoming:</label>
+      <select id="dateFilter">
+        <option value="all" selected>All</option>
+        <option value="3days">Next 3 Days</option>
+        <option value="7days">Next 7 Days</option>
+        <option value="1month">Next 1 Month</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="categoryFilter">📂 Category:</label>
+      <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="electricity">Electricity</option>
+        <option value="water">Water</option>
+        <option value="rent">Rent</option>
+        <option value="internet">Internet</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Bills Table -->
+  <div class="table-container">
+    <table class="bill-table-Bill">
+      <thead>
+      <tr>
+        <th>Bill Name</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Reminder</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody id="billTableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="actions-Bill">
+    <a href="billAdd.html" class="btn-Bill add-btn-Bill">
+      <span class="btn-icon">➕</span>
+      Add Bill
+    </a>
+    <a href="billReport.html" class="btn-Bill report-btn-Bill">
+      <span class="btn-icon">📄</span>
+      Reports
+    </a>
+    <a href="billList.html" class="btn-Bill view-bill-btn-Bill">
+      <span class="btn-icon">📄</span>
+      View All
+    </a>
+  </div>
+</div>
+
+<!-- Message Box -->
+<div id="messageBox" class="message-box"></div>
+
+<script src="../../js/billJs/billDashboard.js"></script>
+</body>
+</html>

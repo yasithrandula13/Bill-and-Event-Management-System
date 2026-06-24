@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Bill - Dashboard</title>
+  <link rel="stylesheet" href="../../css/billCss/BillAdd.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+</head>
+<body>
+<!-- Navbar -->
+<!--<nav class="navbar-Bill">-->
+<!--  <div class="nav-logo-Bill">Bill & Event Reminder</div>-->
+<!--  <ul class="nav-links-Bill">-->
+<!--    <li><a href="billDashboard.html" class="active-Bill">Dashboard</a></li>-->
+<!--    <li><a href="billAdd.html">➕ Add Bill</a></li>-->
+<!--    <li><a href="#">📅 Events</a></li>-->
+<!--  </ul>-->
+<!--</nav>-->
+
+
+<button class="bck-to-home-btn" role="button"> <a href="../../html/dashboard/dashboard.html"><h3>Back To Home</h3></a> </button>
+
+
+
+
+<!-- Main container -->
+<div class="container-Bill">
+  <!-- Header Section -->
+  <div class="header-section-Bill">
+    <div class="header-content-Bill">
+      <div class="header-icon-Bill">
+        <i class="fas fa-plus-circle"></i>
+      </div>
+      <h2 class="page-title-Bill">Add New Bill</h2>
+      <p class="page-subtitle-Bill">Keep track of your financial obligations with ease</p>
+    </div>
+  </div>
+
+  <!-- Add Bill Form -->
+  <div class="form-container-Bill">
+    <form class="bill-form-Bill">
+      <!-- Form Progress Indicator -->
+      <div class="progress-indicator-Bill">
+        <div class="step-Bill active-step-Bill">
+          <div class="step-number-Bill">1</div>
+          <span>Basic Info</span>
+        </div>
+        <div class="step-connector-Bill"></div>
+        <div class="step-Bill">
+          <div class="step-number-Bill">2</div>
+          <span>Details</span>
+        </div>
+        <div class="step-connector-Bill"></div>
+        <div class="step-Bill">
+          <div class="step-number-Bill">3</div>
+          <span>Complete</span>
+        </div>
+      </div>
+
+      <!-- Form Fields -->
+      <div class="form-grid-Bill">
+        <div class="form-group-Bill floating-label-Bill">
+          <input type="text" id="billName" placeholder=" " required>
+          <label for="billName">
+            <i class="fas fa-file-invoice"></i>
+            Bill Name
+          </label>
+          <div class="field-border-Bill"></div>
+        </div>
+
+        <div class="form-group-Bill floating-label-Bill">
+          <select id="category" required>
+            <option value="">Select Category</option>
+            <option value="electricity">⚡ Electricity</option>
+            <option value="water">💧 Water</option>
+            <option value="rent">🏠 Rent</option>
+            <option value="internet">🌐 Internet</option>
+            <option value="other">📋 Other</option>
+          </select>
+          <label for="category">
+            <i class="fas fa-tags"></i>
+            Category
+          </label>
+          <div class="field-border-Bill"></div>
+        </div>
+
+        <div class="form-group-Bill floating-label-Bill">
+          <input type="number" id="amount" placeholder=" " min="1" required>
+          <label for="amount">
+            <i class="fas fa-dollar-sign"></i>
+            Amount (USD)
+          </label>
+          <div class="field-border-Bill"></div>
+        </div>
+
+        <div class="form-group-Bill floating-label-Bill">
+          <input type="date" id="dueDate" required>
+          <label for="dueDate">
+            <i class="fas fa-calendar-alt"></i>
+            Due Date
+          </label>
+          <div class="field-border-Bill"></div>
+        </div>
+      </div>
+
+      <!-- Status Selection -->
+      <div class="form-group-Bill">
+        <label class="section-label-Bill">
+          <i class="fas fa-check-circle"></i>
+          Payment Status
+        </label>
+        <div class="status-toggle-Bill">
+          <input type="radio" id="paid" name="status" value="paid">
+          <label for="paid" class="status-option-Bill paid-Bill">
+            <i class="fas fa-check"></i>
+            <span>Paid</span>
+          </label>
+          <input type="radio" id="unpaid" name="status" value="unpaid" checked>
+          <label for="unpaid" class="status-option-Bill unpaid-Bill">
+            <i class="fas fa-clock"></i>
+            <span>Unpaid</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Reminder Date -->
+      <div class="form-group-Bill floating-label-Bill reminder-group-Bill">
+        <input type="date" id="reminderDate">
+        <label for="reminderDate">
+          <i class="fas fa-bell"></i>
+          Reminder Date (Optional)
+        </label>
+        <div class="field-border-Bill"></div>
+        <small class="helper-text-Bill">Set a reminder before the due date</small>
+      </div>
+
+      <!-- Form Actions -->
+      <div class="form-actions-Bill">
+        <button type="reset" class="btn-Bill cancel-btn-Bill">
+          <i class="fas fa-times"></i>
+          <span>Cancel</span>
+        </button>
+        <button type="submit" class="btn-Bill save-btn-Bill">
+          <i class="fas fa-save"></i>
+          <span>Save Bill</span>
+          <div class="btn-ripple-Bill"></div>
+        </button>
+      </div>
+    </form>
+  </div>
+
+
+
+  </div>
+</div>
+
+<script src="../../js/billJs/billAdd.js"></script>
+</body>
+</html>

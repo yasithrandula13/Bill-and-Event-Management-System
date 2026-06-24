@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Bills - Bill Management System</title>
+  <link rel="stylesheet" href="../../css/billCss/BillList.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="body-bill-list">
+  <!-- Navbar -->
+  <nav class="navbar-bill-list">
+    <div class="nav-container-bill-list">
+      <div class="nav-logo-bill-list">
+        <i class="fas fa-file-invoice-dollar"></i>
+        Bill & Event Reminder
+      </div>
+      <ul class="nav-links-bill-list">
+        <li><a href="../../index.html" class="nav-link-bill-list"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="../bill/billDashboard.html" class="nav-link-bill-list"><i class="fas fa-arrow-left"></i> Dashboard</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-bill-list">
+    <div class="header-bill-list">
+      <h2 class="page-title-bill-list">
+        <i class="fas fa-list-alt"></i>
+        View All Bills
+      </h2>
+      <p class="page-subtitle-bill-list">Manage and track all your bills in one place</p>
+    </div>
+
+    <!-- Filters Section -->
+    <div class="filters-section-bill-list">
+      <div class="filter-card-bill-list">
+        <div class="filter-group-bill-list">
+          <label class="filter-label-bill-list">
+            <i class="fas fa-search"></i>
+            Search Bills
+          </label>
+          <input type="text" id="searchBox" class="filter-input-bill-list" placeholder="Search by bill name...">
+        </div>
+
+        <div class="filter-group-bill-list">
+          <label class="filter-label-bill-list">
+            <i class="fas fa-info-circle"></i>
+            Status
+          </label>
+          <select id="statusFilter" class="filter-select-bill-list">
+            <option value="all">All Status</option>
+            <option value="Paid">Paid</option>
+            <option value="Pending">Pending</option>
+          </select>
+        </div>
+
+        <div class="filter-group-bill-list">
+          <label class="filter-label-bill-list">
+            <i class="fas fa-tags"></i>
+            Category
+          </label>
+          <select id="categoryFilter" class="filter-select-bill-list">
+            <option value="all">All Categories</option>
+            <option value="electricity">Electricity</option>
+            <option value="water">Water</option>
+            <option value="rent">Rent</option>
+            <option value="internet">Internet</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="filter-group-bill-list">
+          <label class="filter-label-bill-list">
+            <i class="fas fa-calendar-alt"></i>
+            Due Before
+          </label>
+          <input type="date" id="dateFilter" class="filter-input-bill-list">
+        </div>
+
+        <button id="clearFilters" class="clear-filters-btn-bill-list">
+          <i class="fas fa-redo"></i>
+          Clear Filters
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Summary -->
+    <div class="stats-summary-bill-list">
+      <div class="stat-card-bill-list">
+        <div class="stat-icon-bill-list" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+          <i class="fas fa-file-invoice"></i>
+        </div>
+        <div class="stat-info-bill-list">
+          <h3 id="totalBills" class="stat-number-bill-list">0</h3>
+          <p class="stat-label-bill-list">Total Bills</p>
+        </div>
+      </div>
+
+      <div class="stat-card-bill-list">
+        <div class="stat-icon-bill-list" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="stat-info-bill-list">
+          <h3 id="pendingBills" class="stat-number-bill-list">0</h3>
+          <p class="stat-label-bill-list">Pending</p>
+        </div>
+      </div>
+
+      <div class="stat-card-bill-list">
+        <div class="stat-icon-bill-list" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="stat-info-bill-list">
+          <h3 id="paidBills" class="stat-number-bill-list">0</h3>
+          <p class="stat-label-bill-list">Paid</p>
+        </div>
+      </div>
+
+      <div class="stat-card-bill-list">
+        <div class="stat-icon-bill-list" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <div class="stat-info-bill-list">
+          <h3 id="totalAmount" class="stat-number-bill-list">$0.00</h3>
+          <p class="stat-label-bill-list">Total Amount</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-container-bill-list">
+      <table class="bill-table-bill-list">
+        <thead>
+        <tr>
+          <th><i class="fas fa-file-invoice"></i> Bill Name</th>
+          <th><i class="fas fa-tags"></i> Category</th>
+          <th><i class="fas fa-dollar-sign"></i> Amount</th>
+          <th><i class="fas fa-calendar-alt"></i> Due Date</th>
+          <th><i class="fas fa-info-circle"></i> Status</th>
+          <th><i class="fas fa-bell"></i> Reminder</th>
+          <th><i class="fas fa-cog"></i> Actions</th>
+        </tr>
+        </thead>
+        <tbody id="billTableBody">
+        <!-- Bills will be inserted here -->
+        </tbody>
+      </table>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="empty-state-bill-list" style="display: none;">
+        <div class="empty-icon-bill-list">
+          <i class="fas fa-inbox"></i>
+        </div>
+        <h3 class="empty-title-bill-list">No Bills Found</h3>
+        <p class="empty-text-bill-list">Try adjusting your filters or add a new bill to get started.</p>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="loading-state-bill-list">
+        <div class="loading-spinner-bill-list">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <p class="loading-text-bill-list">Loading bills...</p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions-bill-list">
+      <a href="billAdd.html" class="btn-bill-list add-btn-bill-list">
+        <i class="fas fa-plus"></i>
+        Add New Bill
+      </a>
+      <a href="billDashboard.html" class="btn-bill-list back-btn-bill-list">
+        <i class="fas fa-arrow-left"></i>
+        Back to Dashboard
+      </a>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div id="deleteModal" class="modal-bill-list">
+    <div class="modal-content-bill-list">
+      <div class="modal-header-bill-list">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>Confirm Delete</h3>
+      </div>
+      <div class="modal-body-bill-list">
+        <p>Are you sure you want to delete this bill? This action cannot be undone.</p>
+        <p class="bill-name-modal-bill-list" id="deleteBillName"></p>
+      </div>
+      <div class="modal-footer-bill-list">
+        <button id="cancelDelete" class="btn-modal-bill-list cancel-btn-modal-bill-list">
+          <i class="fas fa-times"></i>
+          Cancel
+        </button>
+        <button id="confirmDelete" class="btn-modal-bill-list delete-btn-modal-bill-list">
+          <i class="fas fa-trash"></i>
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-bill-list"></div>
+</div>
+
+<script src="../../js/billJs/billList.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    <link rel="stylesheet" href="../../css/eventCss/eventAdd.css">
+</head>
+<body>
+<div class="event-page-container">
+
+    <!-- From Uiverse.io by karthik092726122003 -->
+    <a href="eventDashboard.html">
+    <div class="addevent-styled-wrapper">
+        <button class="button">
+            <div class="button-box">
+      <span class="button-elem">
+        <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="arrow-icon"
+        >
+          <path
+                  fill="black"
+                  d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          ></path>
+        </svg>
+      </span>
+                <span class="button-elem">
+        <svg
+                fill="black"
+                viewBox="0 0  24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="arrow-icon"
+        >
+          <path
+                  d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          ></path>
+        </svg>
+      </span>
+            </div>
+        </button>
+    </div>
+    </a>
+
+
+
+    <div class="event-form-section">
+        <div class="event-add-container">
+            <h2 class="event-add-title">✨ Create New Event</h2>
+
+            <form id="eventForm" class="event-add-form">
+                <div class="form-group">
+                    <label for="eventName">Event Name</label>
+                    <input type="text" id="eventName" placeholder="Enter event name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="eventDate">Event Date</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Event Time</label>
+                        <input type="time" id="eventTime" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventLocation">📍 Location</label>
+                    <input type="text" id="eventLocation" placeholder="Enter event location">
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDescription">📝 Description</label>
+                    <textarea id="eventDescription" rows="4" placeholder="Tell us more about your event..."></textarea>
+                </div>
+
+                <fieldset class="reminder-section">
+                    <legend>🔔 Email Reminder Settings</legend>
+
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="enableReminder" checked>
+                            <span class="checkmark"></span>
+                            Enable Email Reminder
+                        </label>
+                    </div>
+
+                    <div id="reminderFields" class="reminder-fields">
+                        <div class="form-group">
+                            <label for="reminderEmail">📧 Recipient Email</label>
+                            <input type="email" id="reminderEmail" placeholder="example@email.com">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reminderDay">Remind Me</label>
+                                <select id="reminderDay">
+                                    <option value="0">Same Day</option>
+                                    <option value="1" selected>1 Day Before</option>
+                                    <option value="2">2 Days Before</option>
+                                    <option value="3">3 Days Before</option>
+                                    <option value="7">7 Days Before</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="reminderTime">At Time</label>
+                                <input type="time" id="reminderTime" value="09:00">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="event-add-submit-btn">
+                    <span class="btn-icon">✅</span>
+                    Create Event
+                </button>
+            </form>
+
+            <div id="eventMessageBox" class="event-message-box"></div>
+        </div>
+    </div>
+
+    <div class="event-preview-section">
+        <div class="preview-container">
+            <h3 class="preview-title">📋 Event Preview</h3>
+            <div id="eventPreview" class="event-preview-card">
+                <div class="preview-header">
+                    <h4 id="previewTitle" class="preview-event-title">Event Name</h4>
+                    <span id="previewDate" class="preview-date">Select Date</span>
+                </div>
+                <div class="preview-content">
+                    <div class="preview-detail">
+                        <span class="preview-icon">⏰</span>
+                        <span id="previewTime" class="preview-text">Select Time</span>
+                    </div>
+                    <div class="preview-detail" id="previewLocationDiv" style="display: none;">
+                        <span class="preview-icon">📍</span>
+                        <span id="previewLocation" class="preview-text"></span>
+                    </div>
+                    <div class="preview-detail" id="previewDescriptionDiv" style="display: none;">
+                        <span class="preview-icon">📝</span>
+                        <span id="previewDescription" class="preview-text"></span>
+                    </div>
+                    <div class="preview-detail" id="previewReminderDiv" style="display: none;">
+                        <span class="preview-icon">🔔</span>
+                        <span id="previewReminder" class="preview-text"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/eventJs/eventAdd.js"></script>
+</body>
+</html>

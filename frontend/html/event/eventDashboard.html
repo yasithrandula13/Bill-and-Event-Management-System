@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Dashboard - Enhanced</title>
+  <link rel="stylesheet" href="../../css/eventCss/eventDashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main-wrapper-event">
+<!--  &lt;!&ndash; Navigation &ndash;&gt;-->
+<!--  <nav class="navbar-event">-->
+<!--    <div class="nav-container-event">-->
+<!--      <a href="#" class="nav-logo-event">-->
+<!--        <span class="logo-icon-event">📅</span>-->
+<!--        <span class="logo-text-event">EventHub</span>-->
+<!--      </a>-->
+<!--      <ul class="nav-links-event">-->
+<!--        <li><a href="eventDashboard.html" class="nav-link-event active-event">Dashboard</a></li>-->
+<!--        <li><a href="eventAdd.html" class="nav-link-event">Create Event</a></li>-->
+<!--        <li><a href="#" class="nav-link-event">Settings</a></li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </nav>-->
+
+  <!-- Main Container -->
+  <div class="container-event">
+    <!-- Back Button -->
+    <a href="../../html/dashboard/dashboard.html" class="btn-event-bck-dashboard">
+      <h3>← Back to Home</h3>
+    </a>
+
+    <!-- Header Section -->
+    <div class="header-section-event">
+      <h1 class="page-title-event">Event Dashboard</h1>
+      <p class="page-subtitle-event">Manage and track all your events in one place</p>
+    </div>
+
+    <!-- Reminder Section -->
+    <div class="reminder-section-event" id="reminderSection">
+      <div class="reminder-header-event">
+        <h2 class="reminder-title-event">
+          <span>⏰</span> Upcoming Reminders
+        </h2>
+        <div class="reminder-controls-event">
+          <select id="reminderDaysFilter" class="reminder-filter-event">
+            <option value="7">Next 7 days</option>
+            <option value="14">Next 14 days</option>
+            <option value="30">Next 30 days</option>
+          </select>
+          <button id="toggleReminders" class="reminder-toggle-btn-event">
+            <span id="toggleIcon">🔽</span>
+            <span id="toggleText">Hide</span>
+          </button>
+        </div>
+      </div>
+      <div class="reminder-content-event" id="reminderContent">
+        <div class="reminder-cards-container-event">
+          <div class="reminder-cards-event" id="reminderCards"></div>
+          <div class="reminder-no-events-event" id="reminderNoEvents" style="display: none;">
+            <div class="no-reminder-icon-event">📭</div>
+            <h3>No Upcoming Events</h3>
+            <p>You're all caught up! No events scheduled in this period.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Container -->
+    <div class="stats-container-event">
+      <div class="stat-card-event">
+        <div class="stat-icon-event">📊</div>
+        <div class="stat-content-event">
+          <div class="stat-number-event" id="totalEvents">0</div>
+          <div class="stat-label-event">Total Events</div>
+        </div>
+      </div>
+      <div class="stat-card-event">
+        <div class="stat-icon-event">📅</div>
+        <div class="stat-content-event">
+          <div class="stat-number-event" id="upcomingEvents">0</div>
+          <div class="stat-label-event">Upcoming</div>
+        </div>
+      </div>
+      <div class="stat-card-event">
+        <div class="stat-icon-event">✅</div>
+        <div class="stat-content-event">
+          <div class="stat-number-event" id="pastEvents">0</div>
+          <div class="stat-label-event">Completed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-content-event">
+      <!-- Calendar Section -->
+      <div class="calendar-section-event">
+        <div class="calendar-header-event">
+          <h3 class="calendar-title-event">Calendar</h3>
+          <div class="calendar-controls-event">
+            <button id="prevMonth" class="calendar-nav-btn-event">‹</button>
+            <span id="monthYear" class="calendar-month-year-event">Month Year</span>
+            <button id="nextMonth" class="calendar-nav-btn-event">›</button>
+          </div>
+        </div>
+        <div class="calendar-container-event">
+          <div class="calendar-weekdays-event">
+            <div class="weekday-event">Sun</div>
+            <div class="weekday-event">Mon</div>
+            <div class="weekday-event">Tue</div>
+            <div class="weekday-event">Wed</div>
+            <div class="weekday-event">Thu</div>
+            <div class="weekday-event">Fri</div>
+            <div class="weekday-event">Sat</div>
+          </div>
+          <div class="calendar-grid-event" id="calendarGrid"></div>
+        </div>
+      </div>
+
+      <!-- Events Section -->
+      <div class="events-section-event">
+        <div class="events-header-event">
+          <h3 class="events-title-event">All Events</h3>
+          <div class="filters-event">
+            <div class="search-container-event">
+              <input type="text" id="searchBox" class="search-input-event" placeholder="Search events...">
+              <span class="search-icon-event">🔍</span>
+            </div>
+            <select id="statusFilter" class="filter-select-event">
+              <option value="all">All Events</option>
+              <option value="upcoming">Upcoming</option>
+              <option value="past">Past</option>
+            </select>
+          </div>
+        </div>
+        <div class="events-list-container-event">
+          <div class="events-list-event" id="dashboardCards"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Action Button -->
+  <div class="floating-actions-event">
+    <a href="eventAdd.html" class="fab-event fab-primary-event" title="Create New Event">
+      <span class="fab-icon-event">+</span>
+    </a>
+  </div>
+
+  <!-- Calendar Tooltip -->
+  <div class="calendar-tooltip-event" id="calendarTooltip">
+    <div class="tooltip-date-event" id="tooltipDate"></div>
+    <div class="tooltip-events-event" id="tooltipEvents"></div>
+  </div>
+</div>
+
+<script src="../../js/eventJs/eventDashboard.js"></script>
+</body>
+</html>

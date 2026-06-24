@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../../css/dashboardCss/admindashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="logo">Admin Panel</div>
+    <nav>
+        <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
+        <a href="#feedback"><i class="fas fa-comments"></i> Feedback Review</a>
+        <a href="#users"><i class="fas fa-users"></i> User Management</a>
+        <a href="#reports"><i class="fas fa-chart-bar"></i> Reports</a>
+    </nav>
+</aside>
+
+<!-- Main Content -->
+<main class="main">
+    <!-- Topbar -->
+    <header class="topbar">
+        <h1>Admin Dashboard</h1>
+        <div class="profile">
+            <i class="fas fa-user-circle"></i> Admin
+        </div>
+    </header>
+
+    <!-- Cards -->
+    <section class="cards" id="reports">
+        <div class="card">
+            <h3>Total Feedback</h3>
+            <p id="totalFeedbacks">0</p>
+        </div>
+        <div class="card">
+            <h3>Average Rating</h3>
+            <p id="avgRating">0.0</p>
+        </div>
+        <div class="card">
+            <h3>Total Users</h3>
+            <p id="totalUsers">120</p>
+        </div>
+        <div class="card">
+            <h3>Active Users</h3>
+            <p id="activeUsers">98</p>
+        </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts">
+        <div class="chart-card">
+            <h2>Feedback Ratings Distribution</h2>
+            <canvas id="ratingsChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <h2>Feedback Trend (Last 7 Days)</h2>
+            <canvas id="trendChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Feedback Review -->
+    <section id="feedback" class="section">
+        <h2><i class="fas fa-comments"></i> Feedback Review</h2>
+        <div id="feedbackList" class="feedback-list"></div>
+    </section>
+
+    <!-- User Management -->
+    <section id="users" class="section">
+        <h2><i class="fas fa-users"></i> User Management</h2>
+        <table class="user-table">
+            <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="userTableBody">
+            <!-- Dummy Users -->
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../../js/dashboardJs/admindashboard.js"></script>
+</body>
+</html>

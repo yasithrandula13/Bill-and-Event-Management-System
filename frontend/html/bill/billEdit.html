@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Bill - Bill Management System</title>
+    <link rel="stylesheet" href="../../css/billCss/BillEdit.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="body-bill-edit">
+    <div class="container-bill-edit">
+        <div class="header-bill-edit">
+            <div class="nav-buttons-bill-edit">
+                <a href="../../index.html" class="nav-btn-bill-edit">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="../../html/bill/billdashboard.html" class="nav-btn-bill-edit">
+                    <i class="fas fa-list"></i>
+                    <span>Manage Bills</span>
+                </a>
+            </div>
+            <h1 class="title-bill-edit"><i class="fas fa-edit"></i> Edit Bill</h1>
+            <p class="subtitle-bill-edit">Update your bill information</p>
+        </div>
+
+        <div class="form-container-bill-edit">
+            <form id="billEditForm" class="bill-form-bill-edit">
+                <div class="form-row-bill-edit">
+                    <div class="form-group-bill-edit">
+                        <label for="name" class="label-bill-edit">
+                            <i class="fas fa-file-invoice"></i>
+                            Bill Name
+                        </label>
+                        <input type="text" id="name" class="input-bill-edit" required placeholder="Enter bill name">
+                    </div>
+                </div>
+
+                <div class="form-row-bill-edit">
+                    <div class="form-group-bill-edit">
+                        <label for="category" class="label-bill-edit">
+                            <i class="fas fa-tags"></i>
+                            Category
+                        </label>
+                        <select id="category" class="input-bill-edit" required>
+                            <option value="">Select category</option>
+                            <option value="electricity">Electricity</option>
+                            <option value="water">Water</option>
+                            <option value="rent">Rent</option>
+                            <option value="internet">Internet</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-bill-edit">
+                        <label for="amount" class="label-bill-edit">
+                            <i class="fas fa-dollar-sign"></i>
+                            Amount
+                        </label>
+                        <input type="number" id="amount" class="input-bill-edit" step="0.01" required placeholder="0.00">
+                    </div>
+                </div>
+
+                <div class="form-row-bill-edit">
+                    <div class="form-group-bill-edit">
+                        <label for="dueDate" class="label-bill-edit">
+                            <i class="fas fa-calendar-alt"></i>
+                            Due Date
+                        </label>
+                        <input type="date" id="dueDate" class="input-bill-edit" required>
+                    </div>
+
+                    <div class="form-group-bill-edit">
+                        <label for="reminderDate" class="label-bill-edit">
+                            <i class="fas fa-bell"></i>
+                            Reminder Date
+                        </label>
+                        <input type="date" id="reminderDate" class="input-bill-edit">
+                    </div>
+                </div>
+
+                <div class="form-row-bill-edit">
+                    <div class="form-group-bill-edit status-group-bill-edit">
+                        <label class="label-bill-edit">
+                            <i class="fas fa-info-circle"></i>
+                            Status
+                        </label>
+                        <div class="radio-group-bill-edit">
+                            <label class="radio-label-bill-edit">
+                                <input type="radio" name="status" value="Pending" class="radio-input-bill-edit" required>
+                                <span class="radio-custom-bill-edit"></span>
+                                <span class="radio-text-bill-edit">Pending</span>
+                            </label>
+                            <label class="radio-label-bill-edit">
+                                <input type="radio" name="status" value="Paid" class="radio-input-bill-edit" required>
+                                <span class="radio-custom-bill-edit"></span>
+                                <span class="radio-text-bill-edit">Paid</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions-bill-edit">
+                    <button type="button" class="btn-cancel-bill-edit" onclick="window.location.href='../../html/bill/billdashboard.html'">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-update-bill-edit">
+                        <i class="fas fa-save"></i>
+                        Update Bill
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading spinner -->
+    <div id="loadingSpinner" class="loading-spinner-bill-edit">
+        <div class="spinner-bill-edit"></div>
+        <p class="loading-text-bill-edit">Loading...</p>
+    </div>
+
+    <!-- Success/Error messages -->
+    <div id="messageContainer" class="message-container-bill-edit"></div>
+</div>
+<script src="../../js/billJs/billEdit.js"></script>
+</body>
+</html>
